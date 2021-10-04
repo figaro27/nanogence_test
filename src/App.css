@@ -1,0 +1,152 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app-bar {
+  background-color: rgb(43, 118, 183);
+  display: flex;
+  justify-content: space-between;
+}
+
+.cement_input_value {
+  padding: 4px 8px;
+  @apply text-lg;
+  @apply text-gray-700;
+  @apply col-span-3;
+  @apply md:col-span-1;
+  @apply shadow;
+  @apply appearance-none;
+  @apply border;
+  @apply rounded;
+  @apply leading-tight;
+  @apply focus:outline-none;
+  @apply focus:ring-1;
+  @apply focus:ring-blue-600;
+}
+
+.input_number {
+  width: 80px;
+  padding: 5px;
+  font-size: 14px;
+  margin-right: 5px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 180px;
+  height: 40px;
+  margin: 10px auto;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #39CCCC;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 32px;
+  width: 60px;
+  left: 10px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2ab934;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #39CCCC;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(100px);
+  -ms-transform: translateX(100px);
+  transform: translateX(100px);
+}
+
+/*------ ADDED CSS ---------*/
+.on
+{
+  display: none;
+}
+
+.on, .off
+{
+  color: white;
+  position: absolute;
+  transform: translate(0,-50%);
+  top: 50%;
+  @apply text-lg;
+  font-weight: bold;
+}
+.on {
+  left: 16px;
+}
+.off {
+  right: 16px;
+}
+
+input:checked+ .slider .on
+{display: block;}
+
+input:checked + .slider .off
+{display: none;}
+
+/*--------- END --------*/
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 10px;
+}
+
+.slider.round:before {
+  border-radius: 10px;}
