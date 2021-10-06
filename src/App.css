@@ -43,6 +43,28 @@
   justify-content: space-between;
 }
 
+.choose_item {
+  @apply col-span-2;
+  @apply md:col-span-1;
+  @apply m-4;
+  @apply md:m-10;
+  @apply text-lg;
+  @apply text-left;
+  @apply cursor-pointer;
+  @apply p-0;
+  @apply md:p-4;
+}
+.choose_item_text {
+  @apply flex;
+  @apply flex-col;
+  @apply justify-center;
+  @apply bg-blue-500;
+  @apply text-white;
+  @apply p-4;
+  @apply rounded-xl;
+  @apply text-center;
+}
+
 .cement_input_value {
   padding: 4px 8px;
   @apply text-lg;
@@ -57,6 +79,21 @@
   @apply focus:outline-none;
   @apply focus:ring-1;
   @apply focus:ring-blue-600;
+}
+
+.cement_input_submit {
+  @apply bg-blue-500;
+  @apply hover:bg-blue-700;
+  @apply text-white;
+  @apply text-lg;
+  @apply md:text-xl;
+  @apply py-1.5;
+  @apply px-2;
+  @apply md:px-6;
+  @apply border;
+  @apply border-gray-400;
+  @apply rounded;
+  @apply shadow;
 }
 
 .input_number {
