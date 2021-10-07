@@ -1,6 +1,10 @@
 import React from 'react'
 
 const ConcreteInput = (props) => {
+
+  const onSubmit = () => {
+    props.onSubmit()
+  }
   return (
     <div className="my-2 px-2">
 
@@ -11,7 +15,7 @@ const ConcreteInput = (props) => {
 
       <div className="flex justify-between items-center my-2">
         <label className="text-base md:text-lg">Please fill in the information</label>
-        <button type="button" className="cement_input_submit" onClick={() => { alert('Coming soon...') }} >
+        <button type="button" className="cement_input_submit" onClick={onSubmit} >
           Submit
         </button>
       </div>

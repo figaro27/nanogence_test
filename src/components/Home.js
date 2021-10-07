@@ -7,9 +7,18 @@ import Choose from './Choose';
 
 const Home = () => {
   const [materialType, setMaterialType] = useState(null)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  useEffect(() => {
+    setIsSubmitted(false)
+  }, [materialType])
 
   const onMaterialChange = (material) => {
     setMaterialType(material)
+  }
+
+  const onSubmit = () => {
+    setIsSubmitted(true)
   }
 
   return (
@@ -29,15 +38,17 @@ const Home = () => {
       </div> */}
      
       { materialType === Material.Cement &&
-        <CementInput onChangeMaterial={onMaterialChange} />
+        <CementInput onChangeMaterial={onMaterialChange} onSubmit={onSubmit} />
       }
       { materialType === Material.Concrete &&
-        <ConcreteInput onChangeMaterial={onMaterialChange} />
+        <ConcreteInput onChangeMaterial={onMaterialChange} onSubmit={onSubmit} />
       }
-      { !materialType && 
+      { !materialType && !isSubmitted &&
         <Choose onChangeMaterial={onMaterialChange} />      
       }
-      <Output /> 
+      { isSubmitted &&
+        <Output /> 
+      }
     </div>
   )
 }
