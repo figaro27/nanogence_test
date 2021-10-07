@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react';
+import Output from './Output';
+import { Link } from "react-router-dom";
 
 const ConcreteInput = (props) => {
-
+  const [isSubmitted, setIsSubmitted] = useState(false)
   const onSubmit = () => {
-    props.onSubmit()
+    setIsSubmitted(true)
   }
   return (
     <div className="my-2 px-2">
 
-      <div className="flex h-16 items-center cursor-pointer" onClick={() => { props.onChangeMaterial(null) }}>
-        <img src="images/concrete_logo.jpg" className="h-full w-auto" alt="cement" />
-        <span className="mx-4 text-2xl font-bold">Concrete</span>
-      </div>
+      <Link to="/">
+        <div className="flex h-16 items-center cursor-pointer">
+          <img src="images/concrete_logo.jpg" className="h-full w-auto" alt="cement" />
+          <span className="mx-4 text-2xl font-bold">Concrete</span>
+        </div>
+      </Link>
 
       <div className="flex justify-between items-center my-2">
         <label className="text-base md:text-lg">Please fill in the information</label>
@@ -68,6 +72,10 @@ const ConcreteInput = (props) => {
         </label>
         <input type="text" className="cement_input_value" />
       </div>
+
+      { isSubmitted &&
+        <Output /> 
+      }
 
     </div>
   )
