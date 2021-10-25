@@ -90,16 +90,16 @@ const CementInput = () => {
     const d_109 = d_38 + d_36
     const d_110 = d_94 + d_56
    
-    const total_cost = d_38
-    const total_cost_cat = d_94
-    const total_carbon = d_36
-    const total_carbon_cat = d_56
+    const clinker_cost = d_38
+    const clinker_cost_cat = d_94
+    const co2_cost = d_36
+    const co2_cost_cat = d_56
     const overall_cost = d_109
     const overall_cost_cat = d_110
 
     setCalRes([
-      ['Total clinker costs without CO2', total_cost, total_cost_cat],
-      ['Total CO2 costs', total_carbon, total_carbon_cat],
+      ['Clinker costs', clinker_cost, clinker_cost_cat],
+      ['CO2 costs', co2_cost, co2_cost_cat],
       ['Total costs', overall_cost, overall_cost_cat]
     ])
 
@@ -125,44 +125,52 @@ const CementInput = () => {
       
       <div className="grid grid-cols-3 my-4">
         <label className="col-span-3 md:col-span-2 text-lg text-left">
-          1. Current clinker (%):
+          1. Current clinker :
         </label>
-        <input type="number" className="cement_input_value" min="1" max="100" {...register("b_9_use_clinker", { required: true })} />
+        <div className="cement_input">
+          <input type="number" className="cement_input_value" min="1" max="100" {...register("b_9_use_clinker", { required: true })} />
+          <label className="cement_input_label">%</label>
+        </div>
       </div>
 
       <div className="grid grid-cols-3 my-4">
         <label className="col-span-3 md:col-span-2 text-lg text-left">
-          2. Expected clinker (%):
+          2. Expected clinker :
         </label>
-        <input type="number" className="cement_input_value" min="1" max="100" {...register("d_42_expected_clinker", { required: true })} />
+        <div className="cement_input">
+          <input type="number" className="cement_input_value" min="1" max="100" {...register("d_42_expected_clinker", { required: true })} />
+          <label className="cement_input_label">%</label>
+        </div>
       </div>
 
       <div className="grid grid-cols-3 my-4">
         <label className="col-span-3 md:col-span-2 text-lg text-left">
-          3. Grinding Aid dosing in Litre per tons:
+          3. Grinding Aid dosing in Litre per tons :
         </label>
-        <input type="number" className="cement_input_value" {...register("d_72_grinding_aid_dosing", { required: true })} />
+        <div className="cement_input">
+          <input type="number" className="cement_input_value" {...register("d_72_grinding_aid_dosing", { required: true })} />
+          <label className="cement_input_label">Liter</label>
+        </div>
       </div>
 
       <div className="grid grid-cols-3 my-4">
         <label className="col-span-3 md:col-span-2 text-lg text-left">
-          4. Current clinker cost per tons (USD):
+          4. Current clinker cost per tons :
         </label>
-        <input type="number" className="cement_input_value"  {...register("d_37_total_clinker_cost", { required: true })} />
+        <div className="cement_input">
+          <input type="number" className="cement_input_value"  {...register("d_37_total_clinker_cost", { required: true })} />
+          <label className="cement_input_label">USD</label>
+        </div>
       </div>
 
       <div className="grid grid-cols-3 my-4">
         <label className="col-span-3 md:col-span-2 text-lg text-left">
-          5. Current Grinding Aid cost per ton (USD):
+          5. Current Grinding Aid cost per ton :
         </label>
-        <input type="number" className="cement_input_value" {...register("d_73_grinding_non_clinker", { required: true })} />
-      </div>
-
-      <div className="grid grid-cols-3 my-4">
-        <label className="col-span-3 md:col-span-2 text-lg text-left">
-          6. Total clinker production tons per year:
-        </label>
-        <input type="number" className="cement_input_value" {...register("d_101_total_volume_site", { required: true })} />
+        <div className="cement_input">
+          <input type="number" className="cement_input_value" {...register("d_73_grinding_non_clinker", { required: true })} />
+          <label className="cement_input_label">USD</label>
+        </div>
       </div>
 
       </form>

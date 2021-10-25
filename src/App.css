@@ -64,13 +64,20 @@
   @apply rounded-xl;
   @apply text-center;
 }
-
-.cement_input_value {
-  padding: 4px 8px;
+.cement_input {
+  padding: 4px 0;
   @apply text-lg;
   @apply text-gray-700;
   @apply col-span-3;
   @apply md:col-span-1;
+  @apply flex;
+  @apply items-center;
+}
+.cement_input_value {
+  padding: 4px 8px;
+  @apply w-full;
+  @apply text-lg;
+  @apply text-gray-700;
   @apply shadow;
   @apply appearance-none;
   @apply border;
@@ -80,7 +87,11 @@
   @apply focus:ring-1;
   @apply focus:ring-blue-600;
 }
-
+.cement_input_label {
+  @apply w-14;
+  @apply mx-1;
+  @apply text-left;
+}
 .cement_input_submit {
   @apply bg-blue-500;
   @apply hover:bg-blue-700;
@@ -96,7 +107,6 @@
   @apply shadow;
   @apply cursor-pointer;
 }
-
 .input_number {
   width: 80px;
   padding: 5px;

@@ -42,15 +42,15 @@ const ConcreteInput = (props) => {
     const c_63 = c_16 + c_57
     const c_64 = c_43 + c_60
     
-    const raw_material_costs = c_16
-    const raw_material_costs_cat = c_43
+    const material_costs = c_16
+    const material_costs_cat = c_43
     const co2_costs = c_57
     const co2_costs_cat = c_60
     const total_costs = c_63
     const total_costs_cat = c_64
     setCalRes([
-      ['Total raw materials costs', raw_material_costs, raw_material_costs_cat],
-      ['Total CO2 costs', co2_costs, co2_costs_cat],
+      ['Materials costs', material_costs, material_costs_cat],
+      ['CO2 costs', co2_costs, co2_costs_cat],
       ['Total costs', total_costs, total_costs_cat]
     ])
     setIsSubmitted(true)
@@ -74,51 +74,62 @@ const ConcreteInput = (props) => {
 
       <div className="grid grid-cols-3 my-4">
         <label className="col-span-3 md:col-span-2 text-lg text-left">
-          1. Current cement kg/m<sup>3</sup> of concrete:
+          1. Current cement of concrete :
         </label>
-        <input type="number" className="cement_input_value" {...register("b_5_current_cement", { required: true })} />
+        <div className="cement_input">
+          <input type="number" className="cement_input_value" {...register("b_5_current_cement", { required: true })} />
+          <label className="cement_input_label">kg/m<sup>3</sup></label>
+        </div>        
       </div>
 
       <div className="grid grid-cols-3 my-4">
         <label className="col-span-3 md:col-span-2 text-lg text-left">
-          2. Expected cement kg/m<sup>3</sup> of concrete:
+          2. Expected cement of concrete :
         </label>
-        <input type="number" className="cement_input_value" {...register("b_20_expected_cement", { required: true })} />
+        <div className="cement_input">
+          <input type="number" className="cement_input_value" {...register("b_20_expected_cement", { required: true })} />
+          <label className="cement_input_label">kg/m<sup>3</sup></label>
+        </div>
       </div>
 
       <div className="grid grid-cols-3 my-4">
         <label className="col-span-3 md:col-span-2 text-lg text-left">
-          3. Admixture in litre per m<sup>3</sup> of concrete:
+          3. Admixture in litre per m<sup>3</sup> of concrete :
         </label>
-        <input type="number" className="cement_input_value" {...register("b_12_admixture_liter", { required: true })} />
+        <div className="cement_input">
+          <input type="number" className="cement_input_value" {...register("b_12_admixture_liter", { required: true })} />
+          <label className="cement_input_label">Liter</label>
+        </div>
       </div>
 
       <div className="grid grid-cols-3 my-4">
         <label className="col-span-3 md:col-span-2 text-lg text-left">
-          4. Current cement cost per ton (USD):
+          4. Current cement cost per ton :
         </label>
-        <input type="number" className="cement_input_value" {...register("c_6_cement_cost", { required: true })} />
+        <div className="cement_input">
+          <input type="number" className="cement_input_value" {...register("c_6_cement_cost", { required: true })} />
+          <label className="cement_input_label">USD</label>
+        </div>
       </div>
 
       <div className="grid grid-cols-3 my-4">
         <label className="col-span-3 md:col-span-2 text-lg text-left">
-          5. Current Admixture cost per ton (USD):
+          5. Current Admixture cost per ton :
         </label>
-        <input type="number" className="cement_input_value" {...register("c_13_admixture_costs", { required: true })}/>
+        <div className="cement_input">
+          <input type="number" className="cement_input_value" {...register("c_13_admixture_costs", { required: true })}/>
+          <label className="cement_input_label">USD</label>
+        </div>
       </div>
 
       <div className="grid grid-cols-3 my-4">
         <label className="col-span-3 md:col-span-2 text-lg text-left">
-          6. Current Aggregates cost per m<sup>3</sup> (USD):
+          6. Current Aggregates cost per m<sup>3</sup> :
         </label>
-        <input type="number" className="cement_input_value" {...register("c_9_aggregate_costs", { required: true })}/>
-      </div>
-
-      <div className="grid grid-cols-3 my-4">
-        <label className="col-span-3 md:col-span-2 text-lg text-left">
-          7. Total concrete production m<sup>3</sup> per year:
-        </label>
-        <input type="number" className="cement_input_value" {...register("c_46_production", { required: true })}/>
+        <div className="cement_input">
+          <input type="number" className="cement_input_value" {...register("c_9_aggregate_costs", { required: true })}/>
+          <label className="cement_input_label">USD</label>
+        </div>
       </div>
 
       </form>
