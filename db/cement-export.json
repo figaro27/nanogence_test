@@ -45,5 +45,13 @@
   "b_88_volume_ngc_additive": 1000,
   "c_89_acceptable_cost_ngc": 0.49,
   "b_97_standard_revenue": 85,
-  "c_97_standard_revenue": 40
+  "c_97_standard_revenue": 40,
+
+  "con_b_37_acceptable_price": 0.49,
+  "con_c_27_admixture_reduction": 1,
+  "con_c_36_dosage": 5,
+  "con_b_39_corresponding_price": 2.83,
+  "con_b_53_kg_co2_emitted": 230,
+  "con_c_56_costs_co2": 50,
+  "con_b_69_m3_concrete": 2406.53
 }

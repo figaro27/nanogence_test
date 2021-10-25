@@ -89,15 +89,20 @@ const CementInput = () => {
     const c_56 = d_45 / d_10 * d_36
     const d_109 = d_38 + d_36
     const d_110 = d_94 + d_56
+   
+    const total_cost = d_38
+    const total_cost_cat = d_94
+    const total_carbon = d_36
+    const total_carbon_cat = d_56
+    const overall_cost = d_109
+    const overall_cost_cat = d_110
 
-    setCalRes({
-      total_cost: d_38,
-      total_cost_cat: d_94,
-      total_carbon: d_36,
-      total_carbon_cat: d_56,
-      overall_cost: d_109,
-      overall_cost_cat: d_110
-    })
+    setCalRes([
+      ['Total clinker costs without CO2', total_cost, total_cost_cat],
+      ['Total CO2 costs', total_carbon, total_carbon_cat],
+      ['Total costs', overall_cost, overall_cost_cat]
+    ])
+
     setIsSubmitted(true)
   }
 
