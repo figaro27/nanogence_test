@@ -1,12 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import CementInput from './CementInput';
 import ConcreteInput from './ConcreteInput.';
 import { Material } from '../utils/constants';
 import Choose from './Choose';
+import firebase from '../utils/firebase';
 
 const Home = () => {
   const [materialType, setMaterialType] = useState(null)
+
+  useEffect(() => {
+    const cementRef = firebase.database().ref('cement');
+    cementRef.on('value', (snapshot) => {
+      console.log('--------', snapshot.val())
+    });
+  }, [])
+
+  const onDataChange = (items) => {
+    console.log('------------', items)
+  }
 
   return (
     <BrowserRouter>

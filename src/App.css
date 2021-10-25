@@ -94,6 +94,7 @@
   @apply border-gray-400;
   @apply rounded;
   @apply shadow;
+  @apply cursor-pointer;
 }
 
 .input_number {
