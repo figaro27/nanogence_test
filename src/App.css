@@ -47,7 +47,7 @@
   @apply col-span-2;
   @apply md:col-span-1;
   @apply m-4;
-  @apply md:m-10;
+  @apply md:m-8;
   @apply text-lg;
   @apply text-left;
   @apply cursor-pointer;

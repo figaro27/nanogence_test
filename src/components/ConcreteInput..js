@@ -2,20 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Output from './Output';
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import firebase from '../utils/firebase';
+import CementParameters from "../cement-parameters.json";
 
 const ConcreteInput = (props) => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const [isSubmitted, setIsSubmitted] = useState(false)
-  const [parameters, setParameters] = useState({})
+  const [parameters, setParameters] = useState(CementParameters)
   const [calRes, setCalRes] = useState({})
-
-  useEffect(() => {
-    const cementRef = firebase.database().ref('cement');
-    cementRef.on('value', (snapshot) => {
-      setParameters(snapshot.val())
-    });
-  }, [])
 
   const onSubmit = (input) => {
 

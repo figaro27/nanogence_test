@@ -2,20 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { useForm } from "react-hook-form";
 import Output from './Output';
 import { Link } from "react-router-dom";
-import firebase from '../utils/firebase';
+import CementParameters from "../cement-parameters.json";
 
 const CementInput = () => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const [isSubmitted, setIsSubmitted] = useState(false)
-  const [parameters, setParameters] = useState({})
+  const [parameters, setParameters] = useState(CementParameters)
   const [calRes, setCalRes] = useState({})
-
-  useEffect(() => {
-    const cementRef = firebase.database().ref('cement');
-    cementRef.on('value', (snapshot) => {
-      setParameters(snapshot.val())
-    });
-  }, [])
 
   const onSubmit = (input) => {
     const d_37 = input.d_37_total_clinker_cost
