@@ -70,7 +70,7 @@ const ConcreteInput = (props) => {
           1. Current cement of concrete :
         </label>
         <div className="cement_input">
-          <input type="number" className="cement_input_value" {...register("b_5_current_cement", { required: true })} />
+          <input type="number" className="cement_input_value" step="0.01" {...register("b_5_current_cement", { required: true })} />
           <label className="cement_input_label">kg/m<sup>3</sup></label>
         </div>        
       </div>
@@ -80,7 +80,7 @@ const ConcreteInput = (props) => {
           2. Expected cement of concrete :
         </label>
         <div className="cement_input">
-          <input type="number" className="cement_input_value" {...register("b_20_expected_cement", { required: true })} />
+          <input type="number" className="cement_input_value" step="0.01" {...register("b_20_expected_cement", { required: true })} />
           <label className="cement_input_label">kg/m<sup>3</sup></label>
         </div>
       </div>
@@ -90,7 +90,7 @@ const ConcreteInput = (props) => {
           3. Admixture in litre per m<sup>3</sup> of concrete :
         </label>
         <div className="cement_input">
-          <input type="number" className="cement_input_value" {...register("b_12_admixture_liter", { required: true })} />
+          <input type="number" className="cement_input_value" step="0.01" {...register("b_12_admixture_liter", { required: true })} />
           <label className="cement_input_label">Liter</label>
         </div>
       </div>
@@ -100,7 +100,7 @@ const ConcreteInput = (props) => {
           4. Current cement cost per ton :
         </label>
         <div className="cement_input">
-          <input type="number" className="cement_input_value" {...register("c_6_cement_cost", { required: true })} />
+          <input type="number" className="cement_input_value" step="0.01" {...register("c_6_cement_cost", { required: true })} />
           <label className="cement_input_label">USD</label>
         </div>
       </div>
@@ -110,7 +110,7 @@ const ConcreteInput = (props) => {
           5. Current Admixture cost per ton :
         </label>
         <div className="cement_input">
-          <input type="number" className="cement_input_value" {...register("c_13_admixture_costs", { required: true })}/>
+          <input type="number" className="cement_input_value" step="0.01" {...register("c_13_admixture_costs", { required: true })}/>
           <label className="cement_input_label">USD</label>
         </div>
       </div>
@@ -120,7 +120,7 @@ const ConcreteInput = (props) => {
           6. Current Aggregates cost per m<sup>3</sup> :
         </label>
         <div className="cement_input">
-          <input type="number" className="cement_input_value" {...register("c_9_aggregate_costs", { required: true })}/>
+          <input type="number" className="cement_input_value" step="0.01" {...register("c_9_aggregate_costs", { required: true })}/>
           <label className="cement_input_label">USD</label>
         </div>
       </div>

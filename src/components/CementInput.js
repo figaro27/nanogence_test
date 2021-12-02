@@ -121,7 +121,7 @@ const CementInput = () => {
           1. Current clinker :
         </label>
         <div className="cement_input">
-          <input type="number" className="cement_input_value" min="1" max="100" {...register("b_9_use_clinker", { required: true })} />
+          <input type="number" className="cement_input_value" min="1" max="100" step="0.01" {...register("b_9_use_clinker", { required: true })} />
           <label className="cement_input_label">%</label>
         </div>
       </div>
@@ -131,7 +131,7 @@ const CementInput = () => {
           2. Expected clinker :
         </label>
         <div className="cement_input">
-          <input type="number" className="cement_input_value" min="1" max="100" {...register("d_42_expected_clinker", { required: true })} />
+          <input type="number" className="cement_input_value" min="1" max="100" step="0.01" {...register("d_42_expected_clinker", { required: true })} />
           <label className="cement_input_label">%</label>
         </div>
       </div>
@@ -141,7 +141,7 @@ const CementInput = () => {
           3. Grinding Aid dosing in Litre per tons :
         </label>
         <div className="cement_input">
-          <input type="number" className="cement_input_value" {...register("d_72_grinding_aid_dosing", { required: true })} />
+          <input type="number" className="cement_input_value" step="0.01" {...register("d_72_grinding_aid_dosing", { required: true })} />
           <label className="cement_input_label">Liter</label>
         </div>
       </div>
@@ -151,7 +151,7 @@ const CementInput = () => {
           4. Current clinker cost per tons :
         </label>
         <div className="cement_input">
-          <input type="number" className="cement_input_value"  {...register("d_37_total_clinker_cost", { required: true })} />
+          <input type="number" className="cement_input_value"  step="0.01" {...register("d_37_total_clinker_cost", { required: true })} />
           <label className="cement_input_label">USD</label>
         </div>
       </div>
@@ -161,7 +161,7 @@ const CementInput = () => {
           5. Current Grinding Aid cost per ton :
         </label>
         <div className="cement_input">
-          <input type="number" className="cement_input_value" {...register("d_73_grinding_non_clinker", { required: true })} />
+          <input type="number" className="cement_input_value" step="0.01" {...register("d_73_grinding_non_clinker", { required: true })} />
           <label className="cement_input_label">USD</label>
         </div>
       </div>
