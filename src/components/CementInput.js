@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import Output from './Output';
 import { Link } from "react-router-dom";
 import CementParameters from "../cement-parameters.json";
+import CementImg from "../images/cement_logo.jpg"
 
 const CementInput = () => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -104,7 +105,7 @@ const CementInput = () => {
 
       <Link to="/">
         <div className="flex h-16 items-center cursor-pointer">
-          <img src="images/cement_logo.jpg" className="h-full w-auto" alt="cement" />
+          <img src={CementImg} className="h-full w-auto" alt="cement" />
           <span className="mx-4 text-2xl font-bold">Cement</span>
         </div>
       </Link>
